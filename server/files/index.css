@@ -6,7 +6,8 @@ h1 {
 }
 
 /* Constrain the page to the viewport */
-html, body {
+html,
+body {
   height: 100vh;
   margin: 0;
 }
@@ -21,6 +22,13 @@ nav {
 /* navigation buttons have full width */
 nav button {
   width: 100%;
+  max-width: 130px;
+  background-color: white;
+  color: #222;
+  border: 1px solid #7a7a7a;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 105%;
 }
 
 /* Remove unnecessary space and bullets from the lists */
@@ -33,12 +41,13 @@ ul {
 /* Task 2.1. Lay out the childs of the 'body' using Grid Template Areas. */
 body {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: 90px auto 1fr 60px;
   grid-template-areas:
     "h"
     "n"
     "m"
     "f";
+  background: linear-gradient(180deg, #8d2d27 0%, #b13831 45%, #a8332d 100%);
 }
 
 /* Task 3.1. Make the header element a flex container and center its children
@@ -49,17 +58,48 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
+}
+
+header h1 {
+  margin: 0;
+  color: #f1e2c6;
+  font-size: 3.2rem;
+  font-weight: bold;
 }
 
 /* Task 3.2. Make the list items of the unordered list in the nav element a flex container, 
    use column direction and center the child items
  */
+nav {
+  grid-area: n;
+  padding-top: 26px;
+  padding-left: 18px;
+  padding-right: 18px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+nav h2 {
+  margin: 10px 0 18px 0;
+  color: #fff0cf;
+  font-size: 2.1rem;
+  font-weight: bold;
+}
+
 nav ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+nav li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 /* Task 3.3. Make the main element a Flexbox container */
@@ -70,7 +110,8 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
-  padding: 8px;
+  gap: 22px;
+  padding: 10px 18px 18px 18px;
 }
 
 /* Task 3.4. Make the footer's ul a Flexbox container */
@@ -84,39 +125,72 @@ footer ul {
   align-items: center;
   gap: 4px;
   margin: 0;
-  padding: 12px;
+  padding: 10px;
 }
 
-nav {
-  grid-area: n;
+footer li {
+  color: #cdb89a;
+  text-align: center;
 }
 
 @media (min-width: 900px) {
   body {
-    grid-template-columns: 220px 1fr;
-    grid-template-rows: 100px 1fr 80px;
+    grid-template-columns: 210px 1fr;
+    grid-template-rows: 90px 1fr 60px;
     grid-template-areas:
       "h h"
       "n m"
       "f f";
   }
+
+  nav {
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 26px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  footer ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+  }
 }
 
 /* From here on styling from exercise 1 */
 img {
-  border-radius: 12px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 360px;
+  display: block;
+  margin-bottom: 14px;
 }
 
 article {
-  background-color: lightgray;
-  border-radius: 16px;
-  padding: 16px;
-  width: 384px;
-  margin: 8px;
+  background-color: #dfdfdf;
+  border-radius: 20px;
+  padding: 18px;
+  width: 100%;
+  max-width: 430px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+article h1 {
+  color: #333;
+  font-size: 2.2rem;
+  margin: 0 0 10px 0;
+}
+
+article p,
+article li,
+article h2 {
+  color: #333;
 }
 
 a {
-  color: beige;
+  color: #cdb89a;
 }
 
 span {
