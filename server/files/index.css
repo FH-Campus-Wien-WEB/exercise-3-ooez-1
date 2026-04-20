@@ -22,7 +22,7 @@ nav {
 /* navigation buttons have full width */
 nav button {
   width: 100%;
-  max-width: 130px;
+  max-width: 150px;
   background-color: white;
   color: #222;
   border: 1px solid #7a7a7a;
@@ -73,17 +73,19 @@ header h1 {
 nav {
   grid-area: n;
   padding-top: 26px;
-  padding-left: 18px;
-  padding-right: 18px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
 
 nav h2 {
+  width: 150px;
   margin: 10px 0 18px 0;
   color: #fff0cf;
   font-size: 2.1rem;
   font-weight: bold;
+  text-align: center;
 }
 
 nav ul {
@@ -92,7 +94,7 @@ nav ul {
   align-items: center;
   gap: 6px;
   margin: 0 auto;
-  width: 100%;
+  width: 150px;
 }
 
 nav li {
@@ -111,7 +113,7 @@ main {
   justify-content: center;
   align-content: flex-start;
   gap: 22px;
-  padding: 10px 18px 18px 18px;
+  padding: 10px 24px 18px 24px;
 }
 
 /* Task 3.4. Make the footer's ul a Flexbox container */
@@ -135,20 +137,12 @@ footer li {
 
 @media (min-width: 900px) {
   body {
-    grid-template-columns: 210px 1fr;
+    grid-template-columns: 320px 1fr;
     grid-template-rows: 90px 1fr 60px;
     grid-template-areas:
       "h h"
       "n m"
       "f f";
-  }
-
-  nav {
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 26px;
-    padding-left: 18px;
-    padding-right: 18px;
   }
 
   footer ul {
